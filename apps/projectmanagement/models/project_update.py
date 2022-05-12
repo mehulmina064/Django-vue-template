@@ -1,0 +1,23 @@
+from django.db import models
+
+class ProjectUpdate(models.Model):
+    allow_copy = models.BooleanField(default=False)
+    allow_events_in_timeline = models.BooleanField(default=False)
+    allow_guest_to_view = models.BooleanField(default=False)
+    allow_import = models.BooleanField(default=False)
+    allow_rename = models.BooleanField(default=False)
+    autoname = models.CharField(max_length=255, blank=True, null=True)
+    beta = models.BooleanField(default=False)
+    creation = models.DateTimeField(auto_now_add=True)
+    custom = models.BooleanField(default=False)
+    docstatus = models.IntegerField(default=0)
+    doctype = models.CharField(max_length=255, blank=True, null=True)
+    document_type = models.CharField(max_length=255, blank=True, null=True)
+    editable_grid = models.BooleanField(default=False)
+    engine = models.CharField(max_length=255, blank=True, null=True)
+    has_web_view = models.BooleanField(default=False)
+    hide_heading = models.BooleanField(default=False)
+    hide_toolbar = models.BooleanField(default=False)
+    idx = models.IntegerField(default=0)
+    image_view = models.BooleanField(default=False)
+    in_create = models.BooleanField(default=False)
