@@ -24,7 +24,6 @@ selenium-debug.log
 __pycache__/
 local_settings.py
 
-db.sqlite3
 
 
 webpack-stats.json
