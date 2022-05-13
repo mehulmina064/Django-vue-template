@@ -1,4 +1,4 @@
-gfrom django.conf import settings
+from django.conf import settings
 from django.utils.text import slugify
 
 GROUPS_MANAGER_SETTINGS = getattr(settings, 'GROUPS_MANAGER', {})
