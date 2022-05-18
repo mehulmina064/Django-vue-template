@@ -1,0 +1,56 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Group {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="group" style>
+    <div>
+      <h3 class="group", style="color:pink;">Groups</h3>
+      </div>
+      <form action="/" method="get">
+        <label for="group">Group Name:</label>
+        <input list="groups" name="group" id="group">
+        <datalist id="groups">
+          <option value="Tech group">
+          <option value="Sales group">
+          <option value="Marketing group">
+          <option value="HR group">
+          <option value="Finance group">
+          <option value="Logistic group">
+        </datalist>
+        <div>
+        <label for="description"> Description: </label>
+        <input type="text" id="des" name="description"><br><br>
+        </div>
+        <div>
+        <label for="properties"> properties: </label>
+        <input type="text" id="properties" name="properties"><br><br>
+        </div>
+        <div>
+            <form action="/" method="get">
+              <label for="grop">Group Type:</label>
+              <input list="grops" name="grop" id="grop">
+              <datalist id="grops">
+                <option value="Tech">
+                <option value="Sales">
+                <option value="Marketing">
+                <option value="HR">
+                <option value="Finance">
+                <option value="Logistic">
+              </datalist>
+        </div>
+      </form>
+      <div>
+        <form action="/" method="get">
+        <input type="submit">
+    </div>
+
+
+{% endblock content %}
+
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

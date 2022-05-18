@@ -2,12 +2,6 @@ from rest_framework import viewsets,permissions
 from apps.projectmanagement.models import ActivityCost, ActivityType,DependentTask,ProjectTemplateTask,ProjectTemplate,ProjectType,ProjectUpdate,ProjectUser,Project,TaskDependsOn,TaskType,Task,TimesheetDetail,TimeSheet
 from apps.authentication.serializers.projectmanagement.serializer import ActivityCostSerializer, ActivityTypeSerializer,DependentTaskSerializer,ProjectTemplateTaskSerializer,ProjectTemplateSerializer,ProjectTypeSerializer,ProjectUpdateSerializer,ProjectUserSerializer,ProjectSerializer,TaskDependsOnSerializer,TaskTypeSerializer,TaskSerializer,TimesheetDetailSerializer,TimeSheetSerializer
 
-# class RegisterUser(viewsets.ModelViewSet):
-#     def post(self, request):
-#         serializer = UserSerializer(data=request.data)
-        
-#         if not
-
 class ActivityCostViewSet(viewsets.ModelViewSet):
     queryset = ActivityCost.objects.all()
     serializer_class = ActivityCostSerializer

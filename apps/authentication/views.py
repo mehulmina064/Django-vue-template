@@ -9,6 +9,8 @@ from django.contrib.auth import authenticate, login
 from .forms import LoginForm, SignUpForm
 
 
+
+
 def login_view(request):
     form = LoginForm(request.POST or None)
 
@@ -32,6 +34,8 @@ def login_view(request):
 
 
 def register_user(request):
+    
+    
     msg = None
     success = False
 
@@ -41,7 +45,10 @@ def register_user(request):
             form.save()
             username = form.cleaned_data.get("username")
             raw_password = form.cleaned_data.get("password1")
+            
             user = authenticate(username=username, password=raw_password)
+            
+            
 
             msg = 'User created - please <a href="/login">login</a>.'
             success = True
@@ -54,4 +61,17 @@ def register_user(request):
         form = SignUpForm()
 
     return render(request, "accounts/register.html", {"form": form, "msg": msg, "success": success})
+
+# def send_mail_after_registration(email):
+#     subject = 'Your accounts needs to verified'
+#     message = f'you have not verified your account please click on the link below to verify your account http://127.0.0.1:8000/register/verify/{email}'
+#     email_from = settings.EMAIL_HOST_USER
+#     recipient_list = [email]
+#     send_mail (subject, message, email_from, recipient_list)
+
+# def organization_name(request):
+#     response=requests.get('https://api.covid19api.com/countries').json()
+#     return render(request,'index.html',{'response':response})
+
+
  

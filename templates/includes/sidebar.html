@@ -22,18 +22,13 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="{% if 'icons' in segment %} active {% endif %}">
+          {% comment %} <li class="{% if 'icons' in segment %} active {% endif %}">
             <a href="/ui-icons.html">
               <i class="tim-icons icon-atom"></i>
               <p>Icons</p>
-            </a>
-          </li>
-          <li class="{% if 'maps' in segment %} active {% endif %}">
-            <a href="/ui-maps.html">
-              <i class="tim-icons icon-pin"></i>
-              <p>Maps</p>
-            </a>
-          </li>
+            </a> {% endcomment %}
+          {% comment %} </li> {% endcomment %}
+          
           <li class="{% if 'notifications' in segment %} active {% endif %}">
             <a href="/ui-notifications.html">
               <i class="tim-icons icon-bell-55"></i>
@@ -46,18 +41,48 @@
               <p>User Profile</p>
             </a>
           </li>
-          <li class="{% if 'tables' in segment %} active {% endif %}">
+          <li class="{% if 'Organization' in segment %} active {% endif %}">
+            <a href="/ui-organization.html">
+              <i class="tim-icons icon-single-02"></i>
+              <p>Organization</p>
+            </a>
+          </li>
+          <li class="{% if 'Department' in segment %} active {% endif %}">
+            <a href="/ui-department.html">
+              <i class="tim-icons icon-single-02"></i>
+              <p>Department</p>
+            </a>
+          </li>
+          <li class="{% if 'Team' in segment %} active {% endif %}">
+            <a href="/ui-teams.html">
+              <i class="tim-icons icon-single-02"></i>
+              <p>Team</p>
+            </a>
+          </li>
+          <li class="{% if 'Groups' in segment %} active {% endif %}">
+            <a href="/ui-group.html">
+              <i class="tim-icons icon-single-02"></i>
+              <p>Groups</p>
+            </a>
+          </li>
+          {% comment %} <li class="{% if 'tables' in segment %} active {% endif %}">
             <a href="/ui-tables.html">
               <i class="tim-icons icon-puzzle-10"></i>
               <p>Table List</p>
             </a>
-          </li>
-          <li class="{% if 'typography' in segment %} active {% endif %}">
+          </li> {% endcomment %}
+          {% comment %} <li class="{% if 'typography' in segment %} active {% endif %}">
             <a href="/ui-typography.html">
               <i class="tim-icons icon-align-center"></i>
               <p>Typography</p>
             </a>
-          </li>
+          </li> {% endcomment %}
+          <li class="{% if 'maps' in segment %} active {% endif %}">
+            <a href="/ui-maps.html">
+              <i class="tim-icons icon-pin"></i>
+              <p>Maps</p>
+            </a>
+          </li>9
           <li>
             <a href="{% url 'logout' %}" >
               <i class="tim-icons icon-button-power"></i>

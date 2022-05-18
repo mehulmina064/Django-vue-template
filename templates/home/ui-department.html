@@ -1,0 +1,47 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Department {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="org" style>
+  
+    <div>
+    <h3 class="org", style="color:pink;">Department</h3>
+    </div>
+    <form action="http://127.0.0.1:8000/api/org/" method="get">
+      <label for="org">Org name:</label>
+      <input list="orgs" name="org" id="org">
+      {% comment %} <datalist id="orgs">
+        <option value="Prodo">
+        <option value="Snapdeal">
+        <option value="Flipkart">
+        <option value="Amazon">
+        <option value="Delhivery">
+      </datalist> {% endcomment %}
+    </form>
+  
+    <form action="" method="get">
+      <label for="dep">Department name:</label>
+      <input list="deps" name="dep" id="dep">
+      <datalist id="deps">
+        <option value="Sales">
+        <option value="Tech">
+        <option value="Operation">
+        <option value="Logistic">
+      </datalist>
+    </form>
+    <div>
+    <input type="submit">
+</div>
+
+
+
+
+{% endblock content %}
+
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

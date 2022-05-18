@@ -1,12 +1,15 @@
-from django.urls import path, re_path
+from django.urls import path,include, re_path
 from apps.home import views
 
+
+
 urlpatterns = [
-
-    # The home page
+    
+    # path('', views.home.as_view(), name='home'),
     path('', views.index, name='home'),
-
-    # Matches any html file
+   	
+    
+    # Matches any html 
     re_path(r'^.*\.', views.pages, name='pages'),
     
 

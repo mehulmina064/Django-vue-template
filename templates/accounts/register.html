@@ -77,6 +77,17 @@
                     </div>
                     <span class="text-danger">{{ form.password2.errors }}</span>
 
+                    <div class="row">
+                      <div class="col-md-3 px-md-1">
+                          <div class="form-group">
+                          <label>Organization name</label>
+                          {{ form.organization }}
+                          <input type="text" class="form-control" placeholder="Organization name" name="organization_name">
+                          </div>
+                      </div>
+                  </div>
+                  
+
                 </div>
                 <div class="card-footer">
                   <button type="submit" name="register" class="btn btn-fill btn-primary">Register</button>

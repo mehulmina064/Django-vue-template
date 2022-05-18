@@ -1,0 +1,50 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Teams {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="org" style>
+  <div>
+    <h3 class="org", style="color:pink;">Organization name</h3>
+    </div>
+<form action="/" method="get">
+  <label for="org">Org name:</label>
+  <input list="http://127.0.0.1:8000/api/org/" name="org" id="org">
+</form>
+  {% comment %} <form action="" method="get"> {% endcomment %}
+
+
+</div>
+<div class="team" style>
+    <div>
+      <h3 class="team", style="color:pink;">Teams</h3>
+      </div>
+      <form action="/" method="get">
+        <label for="team">Teams name:</label>
+        <input list="teams" name="team" id="team">
+        <datalist id="teams">
+          <option value="Tech team">
+          <option value="Sales team">
+        </datalist>
+        <div>
+        <label for="description">description: </label>
+        <input type="text" id="des" name="description"><br><br>
+        </div>
+      </form>
+      <div>
+        <form action="/" method="get">
+        <input type="submit">
+    </div>
+
+
+
+
+
+{% endblock content %}
+
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

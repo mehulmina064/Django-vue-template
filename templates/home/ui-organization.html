@@ -1,0 +1,35 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Organization {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    {% comment %} <body>
+      <h1>Organization name</h1>
+      {% for i in response %}
+      <strong>{{i.organization_name}} ,</strong>
+      {% endfor %}
+    </body> {% endcomment %}
+    <div class="org" style>
+      <div>
+        <h3 class="org", style="color:pink;">Organization name</h3>
+        </div>
+    <form action="/" method="get">
+      <label for="org">Org name:</label>
+      <input list="http://127.0.0.1:8000/api/org/" name="org" id="org">
+    </form>
+      {% comment %} <form action="" method="get"> {% endcomment %}
+      <form action="/" method="get">
+      <input type="submit">
+
+  </div>
+
+
+  {% endblock content %}
+
+
+  <!-- Specific Page JS goes HERE  -->
+  {% block javascripts %}{% endblock javascripts %}
+

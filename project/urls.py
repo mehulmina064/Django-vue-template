@@ -23,11 +23,11 @@ from django.urls import  path,include
 from rest_framework.schemas import get_schema_view
 
 
-# from rest_framework_simplejwt.views import (
-#     TokenObtainPairView,
-#     TokenRefreshView,
-# )
-# from rest_framework_simplejwt.views import TokenVerifyView
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
+from rest_framework_simplejwt.views import TokenVerifyView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -51,19 +51,19 @@ urlpatterns = [
 
     path ('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
-    #path for api schema
-    path('api_schema/', get_schema_view(
-        title="Prodo Api",
-        description="API developers Hpoing to use our service"
-    ), name='api_schema'),
+    # #path for api schema
+    # path('api_schema/', get_schema_view(
+    #     title="Prodo Api",
+    #     description="API developers Hpoing to use our service"
+    # ), name='api_schema'),
 
     #path for swagger ui
     
 
-    # #jwt token paths
-    # path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    # path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    # path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
+    #jwt token paths
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
 
  
 ]

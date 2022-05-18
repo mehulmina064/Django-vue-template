@@ -2,10 +2,8 @@
 from rest_framework import routers
 from django.urls import  path,include
 
-#import organization&Project viewsets
-# from apps.authentication.apis.viewsets.organization.views import OrganizationViewSet,ProjectViewSet,OrganizationMemberViewSet, \
-#     OrganizationMemberRoleViewSet,OrganizationEntityViewSet,OrganizationTypeViewSet,OrganizationGroupViewSet, \
-#     ProjectGroupViewSet,ProjectMemberViewSet,ProjectGroupMemberViewSet
+#import organization views
+from apps.authentication.apis.viewsets.organizations.views import OrganizationViewSet, OrganizationUserViewSet, OrganizationOwnerViewSet, OrganizationInvitationViewSet, OrganizationMemberViewSet, OrganizationMemberSubclassViewSet, DepartmentViewSet, TeamViewSet
 
 #import account views
 from apps.authentication.apis.viewsets.account.views import AccountUserViewSet,AccountViewSet
@@ -35,16 +33,15 @@ from apps.authentication.apis.viewsets.core.views import Access_LogViewSet,Activ
 router = routers.DefaultRouter()
 
 #paths of organization application
-# router.register(r'org', OrganizationViewSet)
-# router.register(r'project', ProjectViewSet)
-# router.register(r'orgmember',OrganizationMemberViewSet)
-# router.register(r'orgmemberrole',OrganizationMemberRoleViewSet)
-# router.register(r'orgentity',OrganizationEntityViewSet)
-# router.register(r'orgtype',OrganizationTypeViewSet)
-# router.register(r'orggroup',OrganizationGroupViewSet)
-# router.register(r'projectgroup',ProjectGroupViewSet)
-# router.register(r'projectmember',ProjectMemberViewSet)
-# router.register(r'projectgroupmember',ProjectGroupMemberViewSet)
+router.register(r'org', OrganizationViewSet)
+router.register(r'orguser', OrganizationUserViewSet)
+router.register(r'orgowner', OrganizationOwnerViewSet)
+router.register(r'orginvitation',OrganizationInvitationViewSet)
+router.register(r'orgmember',OrganizationMemberViewSet)
+router.register(r'orgmembersubclass',OrganizationMemberSubclassViewSet)
+router.register(r'dep',DepartmentViewSet)
+router.register(r'team',TeamViewSet)
+
 #paths of account application
 router.register(r'Account', AccountViewSet)
 router.register(r'AccountUser', AccountUserViewSet)
