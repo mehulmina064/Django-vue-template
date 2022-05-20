@@ -4,7 +4,7 @@ from django.urls import  path,include
 
 #import organization views
 from apps.authentication.apis.viewsets.organizations.views import OrganizationViewSet, OrganizationUserViewSet, OrganizationOwnerViewSet, OrganizationInvitationViewSet, OrganizationMemberViewSet, OrganizationMemberSubclassViewSet, DepartmentViewSet, TeamViewSet
-
+from apps.organizations.views.default import OrganizationList,OrganizationCreate,OrganizationDetail,OrganizationUpdate,OrganizationDelete,OrganizationUserList,OrganizationUserDetail,OrganizationUserCreate,OrganizationUserDelete,OrganizationUserUpdate,OrganizationUserRemind
 #import account views
 from apps.authentication.apis.viewsets.account.views import AccountUserViewSet,AccountViewSet
 
@@ -41,6 +41,18 @@ router.register(r'orgmember',OrganizationMemberViewSet)
 router.register(r'orgmembersubclass',OrganizationMemberSubclassViewSet)
 router.register(r'dep',DepartmentViewSet)
 router.register(r'team',TeamViewSet)
+#paths for organizion views
+# router.register(r'org', OrganizationList)
+# router.register(r'orgcreate', OrganizationCreate)
+# router.register(r'orgdetail', OrganizationDetail)
+# router.register(r'orgupdate', OrganizationUpdate)
+# router.register(r'orgdelete', OrganizationDelete)
+# router.register(r'orguser', OrganizationUserList)
+# router.register(r'orguserdetail', OrganizationUserDetail)
+# router.register(r'orgusercreate', OrganizationUserCreate)
+# router.register(r'orguserdelete', OrganizationUserDelete)
+# router.register(r'orguserremind', OrganizationUserRemind)
+# router.register(r'orguserupdate', OrganizationUserUpdate)
 
 #paths of account application
 router.register(r'Account', AccountViewSet)
@@ -139,6 +151,19 @@ router.register(r'user', UserViewSet)
 
 urlpatterns = [
     path('/', include(router.urls)),
-   
+    # path('/getlist',get_organization),
+#convert above urls to normal path usrl
+    # path('org/', OrganizationList.as_view()),
+    # path('orgcreate/', OrganizationCreate.as_view()),
+    # path('orgdetail/<int:pk>/', OrganizationDetail.as_view()),
+    # path('orgupdate/<int:pk>/', OrganizationUpdate.as_view()),
+    # path('orgdelete/<int:pk>/', OrganizationDelete.as_view()),
+    # path('orguser/', OrganizationUserList.as_view()),
+    # path('orguserdetail/<int:pk>/', OrganizationUserDetail.as_view()),
+    # path('orgusercreate/', OrganizationUserCreate.as_view()),
+    # path('orguserdelete/<int:pk>/', OrganizationUserDelete.as_view()),
+    # path('orguserremind/<int:pk>/', OrganizationUserRemind.as_view()),
+    # path('orguserupdate/<int:pk>/', OrganizationUserUpdate.as_view()),
+
 ]
 

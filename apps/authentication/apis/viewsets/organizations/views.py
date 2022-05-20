@@ -1,7 +1,8 @@
 from rest_framework import viewsets,permissions
 from apps.organizations.models import Organization, OrganizationUser, OrganizationOwner, OrganizationInvitation, OrganizationMember, OrganizationMemberSubclass, Department, Team
 from apps.authentication.serializers.organizations.serializer import OrganizationSerializer, OrganizationUserSerializer, OrganizationOwnerSerializer, OrganizationInvitationSerializer, OrganizationMemberSerializer, OrganizationMemberSubclassSerializer, DepartmentSerializer, TeamSerializer
-
+from apps.organizations.forms import OrganizationForm
+from django.shortcuts import render
 class OrganizationViewSet(viewsets.ModelViewSet):
     queryset = Organization.objects.all()
     serializer_class = OrganizationSerializer
@@ -46,3 +47,10 @@ class TeamViewSet(viewsets.ModelViewSet):
     queryset = Team.objects.all()
     serializer_class = TeamSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+
+# def get_organization_list(request):
+#     organizations = Organization.objects.all()
+#     serializer = OrganizationSerializer(organizations, many=True)
+#     return Response(serializer.data)
+#     return render(request, 'organizations/organization_list.html')

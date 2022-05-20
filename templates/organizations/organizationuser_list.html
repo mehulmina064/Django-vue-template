@@ -1,0 +1,15 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Login {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+{% load i18n %}
+{% load org_tags %}
+{% block content %}
+<h1>{{ organization }}'s Members</h1>
+<ul>
+	<li><a href="{% url "organization_user_add" organization.pk %}">{% trans "Add a member" %}</a></li>
+</ul>
+{% organization_users organization %}
+{% endblock %}

@@ -7,17 +7,17 @@ from django.utils.translation import gettext_lazy as _
 
 import six
 
-from organizations.base import AbstractBaseInvitation
-from organizations.base import AbstractBaseOrganization
-from organizations.base import AbstractBaseOrganizationOwner
-from organizations.base import AbstractBaseOrganizationUser
-from organizations.base import OrgMeta
-from organizations.fields import AutoCreatedField
-from organizations.fields import AutoLastModifiedField
-from organizations.fields import SlugField
-from organizations.signals import owner_changed
-from organizations.signals import user_added
-from organizations.signals import user_removed
+from apps.organizations.base import AbstractBaseInvitation
+from apps.organizations.base import AbstractBaseOrganization
+from apps.organizations.base import AbstractBaseOrganizationOwner
+from apps.organizations.base import AbstractBaseOrganizationUser
+from apps.organizations.base import OrgMeta
+from apps.organizations.fields import AutoCreatedField
+from apps.organizations.fields import AutoLastModifiedField
+from apps.organizations.fields import SlugField
+from apps.organizations.signals import owner_changed
+from apps.organizations.signals import user_added
+from apps.organizations.signals import user_removed
 
 USER_MODEL = getattr(settings, "AUTH_USER_MODEL", "auth.User")
 ORGS_TIMESTAMPED_MODEL = getattr(settings, "ORGS_TIMESTAMPED_MODEL", None)
@@ -45,7 +45,7 @@ class SharedBaseModel(models.Model):
             "OrgUserModel"
         ]
         if model is None:
-            model = self.__class__.module_registry["organizations.models"][
+            model = self.__class__.module_registry["apps.organizations.models"][
                 "OrgUserModel"
             ]
         return model
@@ -56,7 +56,7 @@ class SharedBaseModel(models.Model):
             "OrgOwnerModel"
         ]
         if model is None:
-            model = self.__class__.module_registry["organizations.models"][
+            model = self.__class__.module_registry["apps.organizations.models"][
                 "OrgOwnerModel"
             ]
         return model
@@ -246,7 +246,7 @@ class AbstractOrganizationOwner(
         `Organization` against an instance of `CustomOrganization`. Mutli-table
         inheritance means the database keys will be identical though.
         """
-        from organizations.exceptions import OrganizationMismatch
+        from apps.organizations.exceptions import OrganizationMismatch
 
         if self.organization_user.organization.pk != self.organization.pk:
             raise OrganizationMismatch

@@ -42,11 +42,32 @@
             </a>
           </li>
           <li class="{% if 'Organization' in segment %} active {% endif %}">
-            <a href="/ui-organization.html">
+            <a href="http://127.0.0.1:8000/o/org/">
               <i class="tim-icons icon-single-02"></i>
-              <p>Organization</p>
+              <p>List Organizations</p>
             </a>
           </li>
+          <li class="{% if 'Organization' in segment %} active {% endif %}">
+            <a href="http://127.0.0.1:8000/o/orgcreate/">
+              <i class="tim-icons icon-single-02"></i>
+              <p>Add Organization</p>
+            </a>
+          </li>
+          <li class="{% if 'Organization' in segment %} active {% endif %}">
+            <a href="http://127.0.0.1:8000/o/orguser/">
+              <i class="tim-icons icon-single-02"></i>
+              <p> Organization Users</p>
+            </a>
+          </li>
+          <li class="{% if 'Organization' in segment %} active {% endif %}">
+            <a href="http://127.0.0.1:8000/o/orgusercreate/">
+              <i class="tim-icons icon-single-02"></i>
+              <p> Add Organization User</p>
+            </a>
+          </li>
+         
+          
+
           <li class="{% if 'Department' in segment %} active {% endif %}">
             <a href="/ui-department.html">
               <i class="tim-icons icon-single-02"></i>

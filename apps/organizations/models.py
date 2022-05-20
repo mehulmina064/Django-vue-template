@@ -1,10 +1,10 @@
 from django.db import models
 from django.db.models.signals import post_save, post_delete
 
-from organizations.abstract import AbstractOrganization
-from organizations.abstract import AbstractOrganizationInvitation
-from organizations.abstract import AbstractOrganizationOwner
-from organizations.abstract import AbstractOrganizationUser
+from apps.organizations.abstract import AbstractOrganization
+from apps.organizations.abstract import AbstractOrganizationInvitation
+from apps.organizations.abstract import AbstractOrganizationOwner
+from apps.organizations.abstract import AbstractOrganizationUser
 from apps.prodocore.models import Member,Group,GroupMemberRoleMixin,GroupEntityMixin,GroupMemberRoleMixin,GroupMemberMixin,\
     GroupMixin,MemberMixin, group_save, group_delete, member_save, member_delete, group_member_save, group_member_delete, \
     DjangoUser, DjangoGroup

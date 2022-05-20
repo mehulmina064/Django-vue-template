@@ -12,18 +12,13 @@
       <strong>{{i.organization_name}} ,</strong>
       {% endfor %}
     </body> {% endcomment %}
-    <div class="org" style>
-      <div>
-        <h3 class="org", style="color:pink;">Organization name</h3>
-        </div>
-    <form action="/" method="get">
-      <label for="org">Org name:</label>
-      <input list="http://127.0.0.1:8000/api/org/" name="org" id="org">
+    <div>
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type = "submit" value = "Submit">
     </form>
-      {% comment %} <form action="" method="get"> {% endcomment %}
-      <form action="/" method="get">
-      <input type="submit">
-
+  
   </div>
 
 
